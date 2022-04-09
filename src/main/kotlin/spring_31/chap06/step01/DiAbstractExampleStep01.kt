@@ -1,20 +1,20 @@
-package spring_31.chap06
+package spring_31.chap06.step01
 
 /**
  * @Author Heli
  */
-class TransactionManager {
+private class TransactionManager {
     fun begin() {}
     fun commit() {}
 }
 
-data class User(
+private data class User(
     val name: String,
     val age: Long
 )
 
 
-fun createUser(
+private fun createUser(
     name: String,
     age: Long
 ): User {
