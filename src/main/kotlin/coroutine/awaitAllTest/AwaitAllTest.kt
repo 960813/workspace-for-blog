@@ -16,6 +16,7 @@ suspend fun main() {
 
 //    normal()
     println(improve())
+    println(improveV2())
 }
 
 suspend fun normal() {
@@ -42,6 +43,19 @@ suspend fun improve(): List<Int> {
             } catch (e: Exception) {
                 null
             }
+        }
+    }.awaitAll().filterNotNull()
+}
+
+suspend fun improveV2(): List<Int> {
+
+    val target = IntRange(1, 100).map { it }
+
+    return target.map {
+        GlobalScope.async {
+            kotlin.runCatching { exceptionWhenParamIsFour(it) }
+                .mapCatching { it }
+                .getOrNull()
         }
     }.awaitAll().filterNotNull()
 }
