@@ -10,6 +10,11 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+// https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    implementation 'ch.qos.logback:logback-classic:1.4.0'
+
+
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
 
@@ -22,4 +27,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
     testImplementation("io.strikt:strikt-core:0.30.1")
+
+// https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-core
+    implementation 'org.mongodb:mongodb-driver-sync:4.7.1'
+
 }
